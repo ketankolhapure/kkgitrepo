@@ -13,19 +13,26 @@ for x in range(n):
         m = int(ar.count(ar[x]))
         res += int(m / 2) if m % 2 == 0 else int((m - 1) / 2 if m > 1 else 0)
 
-#print(res)
+print(res)
 
-for line in sys.stdin:
-    str1=line.split(';')[0]
-    str2=line.split(';')[1]
+"""
+Another solution using dictionary
+dictnum = {}
 
-    res =""
-    str1_ind=0
-    str2_ind=0
-    ind_res = str2.index(str1[0]) #5
+al = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 1, 2, 3, 1, 2, 1]
 
-    for i in str1[1:]:
-        ind = str2.index(str1[i]) #0
-        if ind_res < ind:
-            res = res + str1[i+1]
-        print(res, end="")
+for i in al:
+    dictnum[i] = al.count(i)
+
+result = 0
+
+for i in dictnum.keys():
+    if dictnum[i] > 1:
+        if dictnum[i] % 2 == 0:
+            result += dictnum[i] / 2
+        else:
+            result += (dictnum[i] - 1) / 2
+
+print(result)
+"""
+
